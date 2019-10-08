@@ -154,14 +154,14 @@ public:
 	 */
 	double checkResize()
 	{
-		
-		if (Top + 1 / (double)Size >= .8)
+		double temp = Top + 1 / (double)Size;
+		if (temp >= .8)
 		{
-			return .8;
+			return temp;
 		}
-		else if (Top + 1 / (double)Size <= .2)
+		else if (temp <= .2)
 		{
-			return .2;
+			return temp;
 		}
 		else
 			return 0.0;
@@ -251,11 +251,11 @@ int main() {
 	}
 	
 
-	if (S1.checkResize() == .8)
+	if (S1.checkResize() >= .8)
 	{
 		S1.Enlarge();
 	}
-	else if (S1.checkResize() == .2)
+	else if (S1.checkResize() <= .2)
 	{
 		S1.Reduce();
 	}
